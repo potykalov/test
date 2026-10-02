@@ -1,0 +1,13 @@
+name: Second workflow
+
+on: push
+
+jobs:
+  name-run-uses:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List files and copy repo
+        run: ls -a
+      - uses: actions/checkout@v4
+      - name: List files
+        run: ls -a

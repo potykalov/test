@@ -7,8 +7,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Display some text
-        run: echo "Some text"
-      - name: Display versions
         run: |
           npm -v
           node -v
+
+  run-parallel-command:
+    runs-on: windows-latest
+    steps:
+      - name: Display some text
+        run: echo "Some text"
+
+  run-second-command:
+    runs-on: macos-latest
+    needs: run-first-command
+    steps:
+      - name: Display some text
+        run: echo "Some text"
